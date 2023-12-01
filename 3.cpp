@@ -1,21 +1,14 @@
-//inline functions
-//keyword inline
-// advantage: * where we are calling the function the function is subsituted there
-//* and time is saved as overhead is not moving
-
 #include<iostream>
 using namespace std;
+class address{
+    public:
+    string state;
 
-inline int cube(int c){ //that is why written in definition
-int ans;
-ans=c*c*c;
-return ans;
-}
-
+    void initState(string state){this->state=state;}
+};
 int main(){
-int c;
-cin>>c;
-int ans;
-ans=cube(c);
-cout<<ans;
-return 0;}
+    address obj;
+    obj.initState("Punjab");
+    cout<<obj.state;
+    return 0;
+}

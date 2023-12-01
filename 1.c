@@ -1,58 +1,65 @@
-//circuler queue
 #include<stdio.h>
 #include<stdlib.h>
+int main() {
+/*bitwise AND
+A  B  A&B
+0  0  0
+0  1  0
+1  0  0
+1  1  1
+*/
+ int a=12; //1100
+ int b=9;  //1001
+           /*----*/
+           //1000
+  
+  int c=a&b;
+  printf("%d \n",c);
 
-#define MAX_SIZE 100
+/*
+bitwise OR
+A  B  A|B
+0  0  0
+0  1  1
+1  0  1
+1  1  1
 
-struct circularqueue{
-    int items[MAX_SIZE];
-    int front; //front of the queue
-    int rear;
-};
+*/
+// int a=12; //1100
+// int b=9;  //1001
+            /*----*/
+           //1101
+  
+int d=a|b;
+printf("%d\n",d);
 
-bool isEmpty(struct circularqueue * q){return (q->front == -1 && q->rear==-1);}
+/*
+bitwise exclusive or
 
-bool isFull(struct circularqueue * q){return (q->rear+1)%MAX_SIZE==q->front;}
-void enqueue( struct circularqueue* q, int value) {
-    if(isFull(q)){
-        printf("Queue is full . . .  cant enter value");
-        return;
-    }
-    if(isEmpty(q)){
-        q->front=0;
-        q->rear=0;
-    }
-    else{
-        q->rear=(q->rear+1)%MAX_SIZE; //if its not empty or full and the element will be added at the deleted place
-    }
-    q->items[q->rear]=value;
+A   B   A^B
+0   0   0
+0   1   1
+1   0   1
+1   1   0
+*/
+
+// int a=12; //1100
+// int b=9;  //1001
+           /*----*/
+            //0101
+  
+int e=a^b;
+printf("%d\n",e);
+
+/*
+bitwise compliment
+A  0
+~A 1*/
+
+int p=10;  //1010
+int q=~p;  //0101
+
+printf("%d",q);
 }
-int dequeue(struct circularqueue *q){
-    int value;
-    if(isEmpty(q)){
-        printf("Queue is empty . . . cant delete");
-        return -1;
-    }
-    value=q->items[q->front];
-    if(q->front==q->rear){
-        q->front =-1;q->rear=-1;
-    }
-    else{
-        q->front=(q->front+1)%MAX_SIZE;
-    }
-    return value;
-}
-
-int main(){
-    struct circularqueue q;
-    enqueue(&q,1);
-    enqueue(&q,2);
-    enqueue(&q,3);
-    enqueue(&q,4);
-    printf("delete value: %d",dequeue(&q));
-    printf("delete value: %d",dequeue(&q));
-    enqueue(&q,5);
-    enqueue(&q,6);
-
-    return 0;
-}
+//10 - 01010
+//20 - 10100

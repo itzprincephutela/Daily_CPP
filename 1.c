@@ -1,65 +1,20 @@
-#include<stdio.h>
-#include<stdlib.h>
+//struct can be declared by three ways
+#include <stdio.h>
+
+struct employee{
+    int id;
+    char name;
+    float salary;
+};//a,b,c; ----1 globally
+
+//struct employee a; ----2 globally
 int main() {
-/*bitwise AND
-A  B  A&B
-0  0  0
-0  1  0
-1  0  0
-1  1  1
-*/
- int a=12; //1100
- int b=9;  //1001
-           /*----*/
-           //1000
-  
-  int c=a&b;
-  printf("%d \n",c);
 
-/*
-bitwise OR
-A  B  A|B
-0  0  0
-0  1  1
-1  0  1
-1  1  1
+    struct employee m={3,'B',46.2}; //local to main function only ----3
+    // m.id=12;
+    // m.name='a';
+    // m.salary=2.5;
+    printf("Salary: %.2f\n",m.salary);
 
-*/
-// int a=12; //1100
-// int b=9;  //1001
-            /*----*/
-           //1101
-  
-int d=a|b;
-printf("%d\n",d);
-
-/*
-bitwise exclusive or
-
-A   B   A^B
-0   0   0
-0   1   1
-1   0   1
-1   1   0
-*/
-
-// int a=12; //1100
-// int b=9;  //1001
-           /*----*/
-            //0101
-  
-int e=a^b;
-printf("%d\n",e);
-
-/*
-bitwise compliment
-A  0
-~A 1*/
-
-int p=10;  //1010
-int q=~p;  //0101
-
-printf("%d",q);
+    return 0;
 }
-//10 - 01010
-//20 - 10100

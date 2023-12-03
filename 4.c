@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include <string.h>
 
-struct student {
+typedef struct student {
     int id;
     float marks;
     char fav_char;
     char name[50];
-};
+}st;
 
 int main() {
 
-    struct student harry,ravi,shubhangi;
+    st harry,ravi,shubhangi;
     harry.id=1;
     ravi.id=2;
     shubhangi.id=3;

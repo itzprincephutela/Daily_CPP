@@ -1,18 +1,27 @@
-//pass by address
 #include<iostream>
 using namespace std;
 
-void swap(int &a, int &b){
-int y;
-y=a;
-a=b;
-b=y;
-}
+class Multiply{
+private:
+    int ma,mb;
+    float mc,md;
+public:
+    Multiply(int a,int b){
+        ma=a;
+        mb=b;
+        cout<<ma*mb<<endl;
+    }
+
+    Multiply(float c,float d){
+        mc=c;
+        md=d;
+        cout<<mc*md<<endl;
+    }
+
+};
+
 int main(){
-int a,b;
-cin>>a>>b;
-cout<<a<<"\t"<<b<<"\n";
-swap(a,b);
-cout<<a<<"\t"<<b;
-return 0;
-}
+    float a=2.2,b=3.4;
+    Multiply m1(2,3);
+    Multiply m2(a,b);
+    }

@@ -1,11 +1,40 @@
-#include <iostream>
+//private constructor
+//using friend class
+
+#include<iostream>
 using namespace std;
-int main(){
-// int x = 10;
-// int y = 5;
-// cout << (x > y);
-int x = 5;
-int y = 10;
-cout << (x != y);
-return 0;
+class Employee{
+private:
+    string empname, empcode;
+    Employee()
+    {
+        cout<<"emp 1: information not available! "<<endl;
+    }
+
+    Employee(string name)
+    {
+        empname=name;
+        cout<<"emp2 name: "<<empname<<endl;
+    }
+
+    Employee(string name, string code){
+        empname=name;
+        empcode=code;
+        cout<<"emp3 name: "<<empname<<endl;
+        cout<<"emp3 code: "<<empcode<<endl;
+    }
+    friend class HR;
+};
+class HR{
+
+public:
+HR(){
+    Employee emp1;
+    Employee emp2("Ramesh");
+    Employee emp3("Alok","emp007");
 }
+};
+
+int main(){
+  HR hr1;
+  }

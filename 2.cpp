@@ -1,27 +1,34 @@
+//(private Constructor)
+//Create a private constructor "Number" which accepts an integer number. Now display the table of the number passed to this private member function
+//"showTable()".
+
 #include<iostream>
 using namespace std;
 
-class Multiply{
+class Number{
 private:
-    int ma,mb;
-    float mc,md;
+   double num;
+   Number(double n){
+       num=n;
+       ShowTable(num);
+    }
+
+    void ShowTable(double num){
+       for(int i=1;i<=10;i++){
+            cout<<num<<" * "<<i<<" = "<<num*i<<endl;;
+        }}
+        friend class Table;
+};
+
+class Table{
 public:
-    Multiply(int a,int b){
-        ma=a;
-        mb=b;
-        cout<<ma*mb<<endl;
+    Table(){
+        double n;
+        cin>>n;
+        Number n1(n);
     }
-
-    Multiply(float c,float d){
-        mc=c;
-        md=d;
-        cout<<mc*md<<endl;
-    }
-
 };
 
 int main(){
-    float a=2.2,b=3.4;
-    Multiply m1(2,3);
-    Multiply m2(a,b);
-    }
+   Table t1;
+}

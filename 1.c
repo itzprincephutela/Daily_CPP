@@ -1,15 +1,18 @@
-#include<stdio.h>
-#include<string.h>
+//Type cast:
+       //Implicit - smaller to larger
+          //short - i=10;
+          //int    x=i;
+          //short->int->long
+          //float->double
+       //Explicit
+          //double->float;
+          //long->int;
+          //double->int;
 
-struct student{
-    int id;
-    char name[20];
-    float marks;
-};
+//C++
+          //double y=55.55;
+          //int z=int(y);
 
-struct student s1={1,"ABC"};
-int main(){
-    struct student *ptr = &s1;
-    printf("Roll no. of %s is %d\n",(*ptr).name,ptr->id);
-    return 0;
-}
+//C
+          //double yy=6.5;
+          //int zz=(int)yy;

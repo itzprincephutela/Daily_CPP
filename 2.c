@@ -1,21 +1,22 @@
-#include <stdio.h>
-#include <string.h>
+#include<stdio.h>
+int main() {
+    int n;
+    int m;
+    scanf("%d%d",&n,&m);
+    int arr[n][m];
+    for(int i=0 ;i < n;i++){
+        for (int j = 0;j< m;j++){
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    int max=0;
+    for(int i=0 ;i < n;i++){
+        for (int j = 0;j< m;j++){
+            if(max<=arr[i][j]){
+                max=arr[i][j];
+            }
+        }
+        printf("Maximum element in each row: %d\n",max);
+    }
 
-struct dob{
-    int date;
-    int month;
-    int year;
-};
-
-struct student {
-    int id;
-    char name[20];
-    struct dob d1;
-};
-int main(){
-    struct student s1;
-    printf("Enter DOB\n");
-    scanf("%d%d%d",&s1.d1.date,&s1.d1.month,&s1.d1.year);
-    printf("Date of birth is: %d-%d-%d",s1.d1.date,s1.d1.month,s1.d1.year);
-    return 0;
 }

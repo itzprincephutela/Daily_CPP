@@ -1,47 +1,55 @@
+//Function overloading(operator overloading is a function)
+
+//depend on types of argument or list of arguments
+//not on return type
+
 #include<iostream>
+#include<vector>
+#include<string>
 using namespace std;
-class rectarea{
-    private: //default constructor
-    int l;
-    int b;
-    public:
-    // rectarea(){ //non parameter constructor
-    //     {
-    //         this->l=10;
-    //         this->b=5;
-    //     }
+class Item{
+    string name;
+    double price;
 
-        rectarea(int l,int b){ //parameter constructor
-            this->l=l;
-            this->b=b;
-        }
 
-        rectarea(rectarea &obj){ //copy constructor
-            this->l=obj.l;
-            this->b=obj.b;
-        }
+    Item(const string& n,double p):name(n),price(p){}  //constant string refrence
+
 };
-int main() {
 
-    // rectarea obj=rectarea();
-    // cout<<"obj.l="<<obj.l<<endl;
-    // cout<<"obj.b="<<obj.b<<endl;
+class shoppingcart{
+    private:
+    vector<Item> items;
+    public:
+    void addItem(const Item& item){
+        items.push_back(item);
+    }
+    double calTotalPrice(){
+        double total=0.0;
+        for(const Item& item: items){
+            total+=item.price;
+        }
+        return total;
+    }
+    double calTotalPrice(double discountPerc){
+        double total=calTotalPrice();
+        double discount = total*(discountPerc/100.0);
+        return total-discount;
+    }
+};
 
-    rectarea obj1=rectarea(55,20);
-    cout<<"obj1.l="<<obj1.l<<endl;
-    cout<<"obj1.b="<<obj1.b<<endl;
+int main(){
+    Item book("Twisted",400.50);
+    Item mobile("OnePlus",40000.50);
+    shoppingcart cart;
+    cart.addItem(book);
+    cart.addItem(mobile);
+    double totalWithoutDisc=cart.calTotalPrice();
+    double totalWithDisc=cart.calTotalPrice();
 
-    rectarea obj2=obj1;  //copy content from obj1 to obj2
-    cout<<"obj2.l="<<obj2.l<<endl;
-    cout<<"obj2.b="<<obj2.b<<endl;
-
-    int *ptr1=NULL;
-    ptr1=new int;
-    float *ptr2=new float(55.2);
-
-    delete ptr1;
-    delete ptr2;
+    cout<<"Total without discount: "<<totalWithoutDisc<<endl;
+    cout<<"Total with discount: "<<totalWithDisc<<endl;
 
     return 0;
+
 
 }

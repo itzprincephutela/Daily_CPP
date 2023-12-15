@@ -1,18 +1,20 @@
-//Type cast:
-       //Implicit - smaller to larger
-          //short - i=10;
-          //int    x=i;
-          //short->int->long
-          //float->double
-       //Explicit
-          //double->float;
-          //long->int;
-          //double->int;
+#include <stdio.h>
+#include <string.h>
+struct name{
+    char fn[20];
+    char ln[20];
+};
+struct student{
+    long int roll;
+    struct name n1;
+}s1,s2,s3;
+int main()
+{
+    printf("Enter name of the student: \n");
+    scanf("%s",&s1.n1.fn);
+    printf("Enter roll number of student: \n");
+    scanf("%d",&s1.roll);
+    printf("Roll number of %s is %d",s1.n1.fn,s1.roll);
+    return 0;
 
-//C++
-          //double y=55.55;
-          //int z=int(y);
-
-//C
-          //double yy=6.5;
-          //int zz=(int)yy;
+}

@@ -1,7 +1,18 @@
-#include<iostream>
-using namespace std;
-class XYZ{
+//array 
+//cons of array
+//* fixed size
+//* inefficient insertion and deletion
+//* wasted space
+//* not suitable for dynamic data
+//* sparse data
 
-    ~XYZ(){} //one destructor in one class
-    //cpp allow only one destructor in one class
-};
+//1D Array
+//linear collection of elements
+
+//2D array
+// two dimensional
+
+//pointer: size of pointer 8 byte
+
+//calloc initializes address and malloc does not initialize address
+//relloc increase or decrease memory

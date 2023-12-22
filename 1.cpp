@@ -1,109 +1,18 @@
-/*object oriented programming
-//why any programming language is called oop language?
-//follow four concepts:
-* abstraction:we can only provide things that are useful and hide unwanted attributes(properties) to uses and access only to the useful(main)
-              attributes or properties.
+//access specifier or access modifier
+//public and private(there are more but for now)
+//default private
+//every attribute in the class is private
+//data member:attribute of the class
+//member function:function in the class
+//private: cant be access outside the class. They are private for the class.
+//use of private:
+#include<iostream>
+using namespace std;
 
-* encapsulation:we enclose the properties and function and behaviour we have to define in a unit called class.(blueprint)
-                firstly we have to make a blueprint then we can make infinite object.
-
-* polymorphism:we can make different function with same names.
-               eg.: one function is behaving differently at different condition or situation. add(2,3); add(2.3,3.6);
-               return type and argument type collectively called signature.
-
-* inheritance:inheritance: *pass property from one class to another class
-             *base class to derived class
-             *relation based
-
-single inheritence: derived class inherit from a single base class.
-    simplest form of inheritance.
-
-class base{
-    base class members
-};
-class derived : public base {
-    derived class members
-};
-
-
-multiple inheritence: derived class inherit from a multiple base class.
-
-class base1{
-    base class members
-};
-class base2{
-    base class members
-};
-class derived : public base1,public base2 {
-    derived class members
-};
-
-multilevel inheritence: a class derives from another derived  class,forming a chain of inheritance
-
-heriarical inheritance:
-class grandparent{
-    grandparent class members
-};
-class parent : public grandparent{
-    parent class members
-};
-class child : public parent {
-    derived class members
-};
-
-
-hybrid inheritance: mix of two types of inheritance
-
-an object has two things
-..attributes(property): length,colour,model etc
-..behaviour(function):uses function to get behaviour(shifting gears in a car)
-
-
-pen(object)
-properties:          function/method:
-attributes:           behaviour:
-* length              * open()
-* diameter            * write()
-* colour              * close()
-* brand
-
-class Pen
-{ //body
-
-   float length;
-   float diameter;
-   string colour;
-   string brand;
-
-   void open(){
-
-   }
-   void write(){
-
-   }
-   void close(){
-
-   }
-
-}
-
-//homework:
-book:
-properties
-* title
-* author
-* cost
-
-behaviour
-* open
-* read
-* bookmark
-* close
-
-class book
-{ //body
-
-   string title;
+class Book{    //every time a constructor is called a object is created
+               //every time an object (instance) is created at the runtime
+public:
+   string title; //privately declared
    string author;
    float cost;
 
@@ -119,5 +28,17 @@ class book
    void close(){
 
    }
+
+};
+
+int main(){
+    Book b1;   //class name object name
+    b1.title = "400 days"; //access the attributes of the class
+    b1.author ="Chetan Bhagat";
+    b1.cost =550;
+
+    cout<<"Title: "<<b1.title<<endl;
+    cout<<"Author: "<<b1.author<<endl;
+    cout<<"Cost: "<<b1.cost<<endl;
 
 }

@@ -1,28 +1,34 @@
-//operator overloading is a function with return type
 #include<iostream>
-#include<string>
 using namespace std;
-class mystring{
-    private:
-            string str;
-    public:
-            mystring(const string& s):str(s){}
-    
-    mystring operator /(const mystring other){
 
-        string res=str+other.str;
-        return mystring(res);
-    }
+class Employee
+{ //body
+public:
+   string name;
+   string ecode;
+   int age;
 
-    void display(){
-        cout<<str<<endl;
-    }
 };
 
 int main(){
-    mystring str1("Hello ");
-    mystring str2("People");
-    mystring result=str1/str2;
-    result.display();
-    return 0;
+
+    Employee e1;
+    Employee e2;
+    e1.name = "Ramesh";
+    e1.ecode ="e001";
+    e1.age =34;
+
+    cout<<"Name: "<<e1.name<<endl;
+    cout<<"Ecode: "<<e1.ecode<<endl;
+    cout<<"Age: "<<e1.age<<endl;
+    cout<<endl;
+
+    e2.name = "Lokesh";
+    e2.ecode ="e002";
+    e2.age =28;
+
+    cout<<"Name: "<<e2.name<<endl;
+    cout<<"Ecode: "<<e2.ecode<<endl;
+    cout<<"Age: "<<e2.age<<endl;
+
 }

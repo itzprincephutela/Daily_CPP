@@ -1,42 +1,33 @@
-//inheritence
-// pass property from one class to another class 
-//base class to derived class
-//relation based
+//better then before
+#include<iostream>
+using namespace std;
 
-//single inheritence: derived class inherit from a single base class.
-//     simplest form of inheritance.
+class Book{
+public:
+   string title;
+   string author;
+   float cost;
 
-//class base{
-    //base class members
-//};
-//class derived : public base {
-    //derived class members
-//};
+   void show(){
+       cout<<"Title: "<<title<<endl;
+       cout<<"Author: "<<author<<endl;
+       cout<<"Cost: "<<cost<<endl;
+       cout<<endl;
+   }
 
+};
 
-//multiple inheritence: derived class inherit from a multiple base class.
+int main(){
+    Book b1;
+    Book b2;
+    b1.title = "400 days";
+    b1.author ="Chetan Bhagat";
+    b1.cost =550;
 
-//class base1{
-    //base class members
-//};
-//class base2{
-    //base class members
-//};
-//class derived : public base1,public base2 {
-    //derived class members
-//};
+    b2.title = "500 days";
+    b2.author ="Chetan Bhagat";
+    b2.cost =650;
 
-//multilevel inheritence: a class derives from another derived  class,forming a chain of inheritance
-
-//class grandparent{
-    //grandparent class members
-//};
-//class parent : public grandparent{
-    //parent class members
-//};
-//class child : public parent {
-    //derived class members
-//};
-
-
-//hybrid inheritance: mix of two types of inheritance 
+    b1.show();
+    b2.show();
+}

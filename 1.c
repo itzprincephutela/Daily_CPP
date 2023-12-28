@@ -1,14 +1,24 @@
 #include<stdio.h>
-struct std{
-    char a;
-    char b;
-    int c:2;
-    char d;
-};
-struct std s1;
+#include<string.h>
 
 int main()
 {
-    printf("%lu\n",sizeof(s1));
+    FILE* fptr;
+    fptr=fopen("priya.txt","w");
+    if(fptr!=NULL){
+        printf("File opened successfully");
+    }
+    else{
+        printf("\n File not found\n");
+    }
+    char a[50];
+    printf("\nEnter a string");
+    gets(a);
+    for(int i=0;i<=strlen(a);i++)
+    {
+        fputc(a[i],fptr);
+        //fprintf(fptr,"%c",a[i]);
+    }
+    fclose(fptr);
     return 0;
 }

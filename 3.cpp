@@ -1,33 +1,25 @@
-//better then before
 #include<iostream>
 using namespace std;
 
-class Book{
+class Employee{
+
 public:
-   string title;
-   string author;
-   float cost;
-
-   void show(){
-       cout<<"Title: "<<title<<endl;
-       cout<<"Author: "<<author<<endl;
-       cout<<"Cost: "<<cost<<endl;
-       cout<<endl;
-   }
-
+    static int total;
+    Employee(){total+=1;}
 };
 
+int Employee::total=0;
+
 int main(){
-    Book b1;
-    Book b2;
-    b1.title = "400 days";
-    b1.author ="Chetan Bhagat";
-    b1.cost =550;
 
-    b2.title = "500 days";
-    b2.author ="Chetan Bhagat";
-    b2.cost =650;
+  Employee e1;
+  cout<<"Number of employee: "<<e1.total<<endl;
 
-    b1.show();
-    b2.show();
-}
+   Employee e2;
+  cout<<"Number of employee: "<<e2.total<<endl;
+
+   Employee e3;
+  cout<<"Number of employee: "<<e3.total<<endl;
+
+  //cout<<"Number of employee: "<<Employee::total<<endl;
+  }

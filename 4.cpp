@@ -1,32 +1,34 @@
 #include<iostream>
 using namespace std;
 
-class Student{
+class Day{
 public:
-   string name;
-   string stud_id;
-   int course;
-
-   void display(){
-       cout<<"Name: "<<name<<endl;
-       cout<<"Student_Id: "<<stud_id<<endl;
-       cout<<"Course: "<<course<<endl;
-       cout<<endl;
+    int d;
+   Day(){
+    cin>>d;
+     }
+};
+class Month{
+public:
+    int m;
+   Month(){
+    cin>>m;
    }
-
+};
+class Year{
+public:
+    int y;
+   Year(){
+    cin>>y;
+   }
 };
 
 int main(){
-    Student s1;
-    Student s2;
-    s1.name = "Deepak";
-    s1.stud_id ="CU001";
-    s1.course =19;
 
-    s2.name = "Goyal";
-    s2.stud_id ="CU007";
-    s2.course =20;
+   Day d1;
+   Month m1;
+   Year y1;
 
-    s1.display();
-    s2.display();
+   cout<<d1.d<<"-"<<m1.m<<"-"<<y1.y;
+
 }

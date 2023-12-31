@@ -15,7 +15,7 @@ int Table::total=0;
 int main(){
     Table t1(8);
     Table t2(4);
-    Table t3(6);
+    //Table t3(6);
     cout<<Table::total<<endl;
 
 }

@@ -1,46 +1,42 @@
 #include<iostream>
 using namespace std;
 
-class Book{
-//private:
+class Bankaccount{
+
+   double balance= 2000;
+
 public:
-   string title;
-   string author;
-   float cost;
-//public:
-   void show(){
-       cout<<"Title: "<<title<<endl;
-       cout<<"Author: "<<author<<endl;
-       cout<<"Cost: "<<cost<<endl;
-       cout<<endl;
+   Bankaccount():balance(2000){}
+
+   void withdraw(int amount){
+   if (amount>0){
+   balance=balance-amount;
+   }
+   else{
+   cout<<"invalid";
+   }
+   }
+   void deposit(int amount){
+   if (amount>0){
+   balance=balance+amount;
+   }
+   else{
+   cout<<"invalid";
+   }
    }
 
+   void showbalance(){
+    cout<<balance<<endl;
+   }
 };
 
 int main(){
-    Book b1;
-    Book b2;
-    b1.title = "400 days";
-    b1.author ="Chetan Bhagat";
-    b1.cost =550;
+   Bankaccount b1;
+   b1.deposit(1000);
+   b1.showbalance();
+   b1.withdraw(100);
+   b1.deposit(1000);
+   b1.showbalance();
 
-    b2.title = "500 days";
-    b2.author ="Chetan Bhagat";
-    b2.cost =650;
 
-    b1.show();
-    b2.show();
 }
-/*homework:
-//class name: Person
-//Attributes:
-p_name
-p_age
-p_email
-
-functionshowinfo() - to display person's properties
-
-object1 = 'Rahul', 34, 'rahul123@gmail.com'
-
-object2 = 'Firoz', 45, 'firoz321@gmail.com'
-*/

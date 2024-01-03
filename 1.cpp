@@ -1,24 +1,23 @@
-#include<iostream>
+//static member function
+#include <iostream>
 using namespace std;
 
-class Myclass{
-public:
-    Myclass(){
-
-        cout<<"Inside Constructor!\n";
-    }
-
-    ~Myclass(){
-
-        cout<<"Inside Destructor!\n";
-    }
+class Topics
+{
+   static int number;
+   string stream = "Geometry";
+   public:
+       static void total_topics()
+       {
+          cout<<"Topics covered: "<<number<<endl;
+          }
 };
+
+int Topics::number=7;
 
 int main(){
 
-    int x=0;
-    if(x==0){
-      static Myclass obj;
-    }
-    cout<<"End of main\n";
+    Topics t1;
+    t1.total_topics();  //using objects
+    Topics::total_topics();  //using class
 }

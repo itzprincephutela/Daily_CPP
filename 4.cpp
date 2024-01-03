@@ -1,34 +1,36 @@
 #include<iostream>
 using namespace std;
 
-class Day{
+class Employee{
 public:
-    int d;
-   Day(){
-    cin>>d;
+     string name,ecode;
+     Employee(string nm,string ec){
+
+          name = nm;
+          ecode = ec;
+          cout<<"Employee name: "<<name<<endl;
+          cout<<"Employee ecode: "<<ecode<<endl;
+          }
+};
+
+void editinfo(Employee obj,string nm,string ec){
+
+     obj.name = nm;
+     obj.ecode = ec;
+     cout<<"Inside function name: "<<obj.name<<endl;
+     cout<<"Inside function ecode: "<<obj.ecode<<endl;
      }
-};
-class Month{
-public:
-    int m;
-   Month(){
-    cin>>m;
-   }
-};
-class Year{
-public:
-    int y;
-   Year(){
-    cin>>y;
-   }
-};
 
 int main(){
 
-   Day d1;
-   Month m1;
-   Year y1;
-
-   cout<<d1.d<<"-"<<m1.m<<"-"<<y1.y;
-
+   string nm,ec;
+   Employee e1("Ram","emp001");
+   cout<<"Edit name :";
+   cin>>nm;
+   cout<<"Edit ecode: ";
+   cin>>ec;
+   editinfo(e1,nm,ec);
+   cout<<"After editing: \n";
+   cout<<"New name: "<<e1.name<<endl; //value for the function only if there would have been address then there would be there
+   cout<<"New ecode: "<<e1.ecode<<endl; // the scope of pass by value is till the function only as obj is considered different obj then e1
 }

@@ -1,25 +1,25 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-class Employee{
-
+class Student{
 public:
-    static int total;
-    Employee(){total+=1;}
+    double marks, average;
 };
 
-int Employee::total=0;
+Student calculateAverage(Student stud1, Student stud2)  //returning object as the return from function and it's data type is its class thus we write class at the return type
+{
+    Student result; //class is the data type of the object returning variable
+
+    result.average = (stud1.marks + stud2.marks)/2; //accessing the members of the class through object
+
+    return result;
+}
 
 int main(){
 
-  Employee e1;
-  cout<<"Number of employee: "<<e1.total<<endl;
-
-   Employee e2;
-  cout<<"Number of employee: "<<e2.total<<endl;
-
-   Employee e3;
-  cout<<"Number of employee: "<<e3.total<<endl;
-
-  //cout<<"Number of employee: "<<Employee::total<<endl;
-  }
+   Student s1,s2,avg;
+   s1.marks = 98.2;
+   s2.marks = 83;
+   avg=calculateAverage(s1,s2);
+   cout<<"Average: "<<avg.average; //again the returned value is an object thus accessing through dot operator
+   }

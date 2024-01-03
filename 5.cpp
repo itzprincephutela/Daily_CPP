@@ -1,42 +1,35 @@
 #include<iostream>
 using namespace std;
 
-class Bankaccount{
-
-   double balance= 2000;
-
+class Employee{
 public:
-   Bankaccount():balance(2000){}
+     string name,ecode;
+     Employee(string nm,string ec){
 
-   void withdraw(int amount){
-   if (amount>0){
-   balance=balance-amount;
-   }
-   else{
-   cout<<"invalid";
-   }
-   }
-   void deposit(int amount){
-   if (amount>0){
-   balance=balance+amount;
-   }
-   else{
-   cout<<"invalid";
-   }
-   }
-
-   void showbalance(){
-    cout<<balance<<endl;
-   }
+          name = nm;
+          ecode = ec;
+          cout<<"Employee name: "<<name<<endl;
+          cout<<"Employee ecode: "<<ecode<<endl;
+          }
 };
 
+void editinfo(Employee &obj,string nm,string ec){  //memory address is same
+     obj.name = nm;
+     obj.ecode = ec;
+     cout<<"Inside function name: "<<obj.name<<endl;
+     cout<<"Inside function ecode: "<<obj.ecode<<endl;
+     }
+
 int main(){
-   Bankaccount b1;
-   b1.deposit(1000);
-   b1.showbalance();
-   b1.withdraw(100);
-   b1.deposit(1000);
-   b1.showbalance();
 
-
+   string nm,ec;
+   Employee e1("Ram","emp001");
+   cout<<"Edit name :";
+   cin>>nm;
+   cout<<"Edit ecode: ";
+   cin>>ec;
+   editinfo(e1,nm,ec);//we the object by reference
+   cout<<"After editing: \n";
+   cout<<"New name: "<<e1.name<<endl; //the name is changed in pass by reference
+   cout<<"New ecode: "<<e1.ecode<<endl;
 }

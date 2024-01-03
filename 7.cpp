@@ -1,21 +1,30 @@
+//FRIEND CLASS
+//A friend class can access private and protected members of other class in which it is declared as a friend.
 #include<iostream>
 using namespace std;
-
-class Table{
+class Product{
+private:
+    string name,id;
 public:
-    static int total;
-    Table(double n){
-        for(int i=1;i<=10;i++){
-        cout<<n<<"*"<<i<<"="<<n*i<<endl;
-        }
-        total=total+1;
+    Product(string pname,string pid)
+    {
+        name = pname;
+        id = pid;
+    }
+    friend class Category;
+};
+class Category{
+public:
+    string category = "Electronics";
+    void display(Product& p1)
+    {
+        cout<<"Product category:"<<category<<endl;
+        cout<<"Product name:"<<p1.name<<endl;
+        cout<<"Product id:"<<p1.id<<endl;
     }
 };
-int Table::total=0;
 int main(){
-    Table t1(8);
-    Table t2(4);
-    //Table t3(6);
-    cout<<Table::total<<endl;
-
+    Product prod1("Laptop","pr001");
+    Category cat1;
+    cat1.display(prod1);
 }

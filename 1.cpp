@@ -1,23 +1,27 @@
-//static member function
-#include <iostream>
+//global friend: can access private and protected members of other class in which it is declared as a friend.
+#include<iostream>
 using namespace std;
 
-class Topics
-{
-   static int number;
-   string stream = "Geometry";
-   public:
-       static void total_topics()
-       {
-          cout<<"Topics covered: "<<number<<endl;
-          }
+class Product{
+private:
+   string name,id;
+public:
+   Product(string pname,string pid){
+
+        name=pname;
+        id=pid;
+        }
+    friend void friendFunc(Product& pr1);
 };
 
-int Topics::number=7;
+void friendFunc(Product &pr1)
+{
+    cout<<"Product name: "<<pr1.name<<endl;
+    cout<<"Product id: "<<pr1.id<<endl;
+}
 
 int main(){
 
-    Topics t1;
-    t1.total_topics();  //using objects
-    Topics::total_topics();  //using class
+   Product prod1("iphone","pr007");
+   friendFunc(prod1);
 }

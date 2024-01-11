@@ -1,34 +1,36 @@
-//a copy constructor is a member function of a class that initializes an object with an existing object of the same class
-//it create  an exact copy of an already exiting object and store it in a new object.
-//Copy constructor take takes a reference to an object of the same class as an argument.
-//there are two types of copy constructor:
-//default copy constructor:
-//   if the user does not define any copy constructor, compiler defines it automatically
-//user-defined copy constructor:
-//   defined by the programmer
-//a copy constructor is an overloaded constructor used to declare and initialize an object from another existing object of the same class.
-
 #include<iostream>
 using namespace std;
 
 class Employee{
-
 public:
-   string empname,empcode,empdept;
-   Employee(string ename,string ecode){
-      empname=ename;
-      empcode=ecode;
-      }
-    };
+     string name,ecode;
+     Employee(string nm,string ec){
+
+          name = nm;
+          ecode = ec;
+          cout<<"Employee name: "<<name<<endl;
+          cout<<"Employee ecode: "<<ecode<<endl;
+          }
+};
+
+void editinfo(Employee obj,string nm,string ec){
+
+     obj.name = nm;
+     obj.ecode = ec;
+     cout<<"Inside function name: "<<obj.name<<endl;
+     cout<<"Inside function ecode: "<<obj.ecode<<endl;
+     }
 
 int main(){
-   Employee e1("Ramesh","emp001");
-   Employee e2=e1;
-   cout<<"Employee name: "<<e1.empname<<endl;
-   cout<<"Employee code: "<<e1.empcode<<endl;
 
-   cout<<"Employee name: "<<e2.empname<<endl;
-   cout<<"Employee code: "<<e2.empcode<<endl;
-   e1.empdept="Sales";  //no changes are reflected made in the original after the copy is made
-   cout<<e2.empdept<<endl; // if there is change in the original object after the copy is created then the changes are not reflected in the copy
-   }
+   string nm,ec;
+   Employee e1("Ram","emp001");
+   cout<<"Edit name :";
+   cin>>nm;
+   cout<<"Edit ecode: ";
+   cin>>ec;
+   editinfo(e1,nm,ec);
+   cout<<"After editing: \n";
+   cout<<"New name: "<<e1.name<<endl; //value for the function only if there would have been address then there would be there
+   cout<<"New ecode: "<<e1.ecode<<endl; // the scope of pass by value is till the function only as obj is considered different obj then e1
+}

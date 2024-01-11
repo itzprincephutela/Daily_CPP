@@ -1,37 +1,25 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-class Width;
-
-class Length{
-private:
-   int l;
+class Student{
 public:
-   Length(int ll){
-     l=ll;
-     }
-     friend void area(Length &l1,Width &w1);
+    double marks, average;
 };
 
-class Width{
-private:
-   int b;
-public:
-   Width(int wb){
-     b=wb;
-     }
-     friend void area(Length &l1,Width &w1);
-};
+Student calculateAverage(Student stud1, Student stud2)  //returning object as the return from function and it's data type is its class thus we write class at the return type
+{
+    Student result; //class is the data type of the object returning variable
 
-void area(Length &l1,Width &w1){
+    result.average = (stud1.marks + stud2.marks)/2; //accessing the members of the class through object
 
-     int area;
-     area=(l1.l)*(w1.b);
-     cout<<"Area: "<<area;
+    return result;
 }
 
 int main(){
-   Length l1(2);
-   Width w1(3);
-   area(l1,w1);
-}
+
+   Student s1,s2,avg;
+   s1.marks = 98.2;
+   s2.marks = 83;
+   avg=calculateAverage(s1,s2);
+   cout<<"Average: "<<avg.average; //again the returned value is an object thus accessing through dot operator
+   }

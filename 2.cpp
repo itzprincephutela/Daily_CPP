@@ -1,34 +1,27 @@
-//a member function can also be friend function that can access private and protected members of other class in which it is declared as a friend.
 #include<iostream>
 using namespace std;
 
-class Product;
-class Category{
-public:
-   void friendFunc(Product& pr1 );
-};
-
-class Product{
+class Multiply{
 private:
-   string name,id;
+    int ma,mb;
+    float mc,md;
 public:
-   Product(string pname,string pid){
+    Multiply(int a,int b){
+        ma=a;
+        mb=b;
+        cout<<ma*mb<<endl;
+    }
 
-        name=pname;
-        id=pid;
-        }
-    friend void Category:: friendFunc(Product& pr1);
+    Multiply(float c,float d){
+        mc=c;
+        md=d;
+        cout<<mc*md<<endl;
+    }
+
 };
-
-void Category::friendFunc(Product &pr1)
-{
-    cout<<"Product name: "<<pr1.name<<endl;
-    cout<<"Product id: "<<pr1.id<<endl;
-}
 
 int main(){
-
-   Product prod1("iphone","pr007");
-   Category cat1;
-   cat1.friendFunc(prod1);
-}
+    float a=2.2,b=3.4;
+    Multiply m1(2,3);
+    Multiply m2(a,b);
+    }

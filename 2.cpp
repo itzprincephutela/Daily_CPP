@@ -1,27 +1,51 @@
-#include<iostream>
+#include <iostream>
+#include <string>
 using namespace std;
 
-class Multiply{
+class Student {
 private:
-    int ma,mb;
-    float mc,md;
+    string name;
+
 public:
-    Multiply(int a,int b){
-        ma=a;
-        mb=b;
-        cout<<ma*mb<<endl;
+    // Constructor to initialize the name of the student
+    Student() : name("Unknown") {} // Default constructor sets the name to "Unknown"
+
+    Student(const string& studentName) : name(studentName) {}
+
+    void setName(const string& studentName) {
+        name = studentName;
     }
 
-    Multiply(float c,float d){
-        mc=c;
-        md=d;
-        cout<<mc*md<<endl;
+    string getName() const {
+        return name;
     }
-
 };
 
-int main(){
-    float a=2.2,b=3.4;
-    Multiply m1(2,3);
-    Multiply m2(a,b);
+int main() {
+    int numberOfStudents;
+    cout << "Enter the number of students: ";
+    scin >> numberOfStudents;
+
+    string name;
+    Student* students = new Student[numberOfStudents];
+
+    for (int i = 0; i < numberOfStudents; ++i) {
+        cout << "Enter the name of student " << i + 1 << " (or press Enter for default 'Unknown'): ";
+        getline(cin >> ws, name); // Allowing spaces in names
+
+        if (name.empty()) {
+            // If the user just presses Enter without entering a name
+            students[i] = Student(); // Use the default constructor (name = "Unknown")
+        } else {
+            students[i] = Student(name); // Set the name of the student
+        }
     }
+
+    cout << "\nNames of the students:\n";
+    for (int i = 0; i < numberOfStudents; ++i) {
+        cout << "Student " << i + 1 << ": " << students[i].getName() << endl;
+    }
+
+    delete[] students; // Free the allocated memory
+    return 0;
+}

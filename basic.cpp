@@ -1,64 +1,139 @@
+    // #include<iostream>
+    // using namespace std;
+    // class stack{
+    //     public:
+    //     int *arr;
+    //     int top;
+    //     int size;
+    //     stack(int size){
+    //         arr= new int[size];
+    //         this->size=size;
+    //         top=-1;
+
+    //     }
+    //     // function
+    //     void push(int data){
+    //         if(size-top>1){
+    //             // space available
+    //             top++;
+    //             arr[top]=data; 
+
+    //         }
+    //         else{
+    //             cout<<"overflow"<<endl;
+    //         }
+
+    //     }
+    //     void pop(){
+    //         if(top == -1){
+    //             cout<<"underflow"<<endl;
+    //         }
+    //         else{
+    //             top--;
+    //         }
+                
+    //     }
+    //     bool isempty(){
+    //         if(top==-1){
+    //             return true;
+    //         }
+    //         else{
+    //             return false;
+    //         }
+
+    //     }
+    //     int gettop(){
+    //         if(top==-1){
+    //         cout<<"empty";
+    //         }
+    //         else{
+    //             return arr[top];
+    //         }
+    //     }
+    //     int getsize(){
+    //     return top+1;
+    //     }
+
+
+
+    // };
+
+    // int main(){
+
+    // stack str(10);
+    // // insertion;
+    //     // str.push(5   );
+    //     str.push(4);
+    //     str.push(3);
+    //     str.push(2);
+    //     str.push(1);
+    //     // delection;
+    //     // str.pop();
+    //     // last element;
+    //     // cout<< "elemnent on top "<<str.gettop()<<endl;
+    // // cout<<"kya stack khali hai "<< str.isempty()<<endl; 
+    // // cout<<"size of stack "<< str.getsize()<<endl; 
+
+    // while (!str.isempty()){
+    //             cout<<str.gettop() <<" ";
+    //             str.pop();
+    // }
+    // cout<<endl;
+
+    //     return 0;
+
+    // }
+
+
+
+
+
+
 #include<iostream>
-using namespace std ;
-class node {
+using namespace std;
+class stack{
     public:
-    int data ;
-    node* next;
-    // default constructor
-    node(){
-        cout<<"DEFAULT"<<endl;
-        this->next=NULL;
+    int* arr;
+    int size;
+    int top;
+     stack(){
+        this->size=size;
+        top=-1;
+        arr = new int[size];
+    }
+    void push(int data){
+        if(size-top > 1){
+            // space hai dall dao;
+            top++;
+            arr[top]=data;
+        }
     }
 
-    // paramiterized constructor
-    node(int data){
-        // cout<<"PARA"<<endl;
-        this->data=data;
-        this->next=NULL;
+void pop(){
+    if(top == -1 ){
+    cout<<"underflow";
+}
+else{
+    top--;
+}
+}
+int getdata(){
+    return top+1;
+}
+int gettop(){
+    if(top==-1){
+        cout<<"there is no stack";
     }
-
-};
-void printLL(node* head){
-    // allways make temp banaoge 
-    node* temp = head;
-    while(temp != NULL){
-        cout<<temp->data<<"->";
-       temp= temp->next;
-
+    else{
+      return arr[top];
     }
-    cout<<endl;
 }
-void printlen(node* head){
-    int count=0;
-       node* temp = head;
-       while(temp != NULL){
-        count++;
-        temp=temp->next;
-       }
-       cout<<count<<endl;
+bool isempty(){
+     if(top==-1){
+                return true;
+            }
+            else{
+                return false;
+            }
 }
-int main (){
-    // static
-    node a;
-    // dayanamic allocation
-    // / node* head = new node ;
-    // creation of nodes
-    node* first = new node(10);
-    node* sec = new node(20);
-    node* third = new node(30);
-    node* fou = new node(40);
-    node* five = new node(50);
-
-
-    first->next=sec;
-    sec->next=third;
-    third->next=fou;
-    fou->next=five;
-    five->next=NULL;
-    // linklist create ho chuki h;
-    node* head = first;
-    // print krna h to call lagaaooo
-    printLL(head);
-    printlen(head);
-    
-}
+}   ; 

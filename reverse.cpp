@@ -1,31 +1,31 @@
 #include<iostream>
+#include<queue>
+#include<vector>
+#include<stack>
 using namespace std;
-void reverse(int arr[], int size ){ 
-    int start=0;
-    int end=size-1;
-   while(start <= end){
-    swap(arr[start],arr[end]);
-    start++;
-    end--;
-   }
-   for(int i = 0 ; i < 5 ; i++){
-    cout<<arr[i]<<endl;
-   }
-     
+void reversequeue(queue<int> &q){
+     stack<int> s;
+     while(!q.empty()){
+        int curr = q.front;
+        q.pop;
+        s.push(curr);
+     }
+     while(!s.empty()){
+            int curr = s.top();
+            s.pop();
+            q.push(curr);
+     }
 }
+int main (){
+    queue<int>q;
+    q.push(10);
+    q.push(20);
+    q.push(30);
+    q.push(40);
+    q.back(50);
+    // stack<int> st;
+    reversequeue(q);
 
-void extreme(int arr[],int size){
-    int start = 0 ;
-    int end = size-1 ;
-    while(start<end){
-        cout<<start<<" ";
-        cout<<end<<" ";
-        start++;
-        end--;
-    }
-}
-int main(){
-    int arr[5]={1,2,3,4,5};
-    int size = 5;
-    extreme(arr,size);
+    
+
 }

@@ -4,7 +4,7 @@
 struct Stack{
     int items[MAX_SIZE];
     int top;
-};
+};                                                                                               //newline
 
 void initialize(struct Stack *stack){
     stack->top=-1;

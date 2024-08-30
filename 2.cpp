@@ -6,7 +6,7 @@ class Student {
 private:
     string name;
 
-public:
+public::
     // Constructor to initialize the name of the student
     Student() : name("Unknown") {} // Default constructor sets the name to "Unknown"
 

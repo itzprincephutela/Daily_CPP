@@ -1,7 +1,7 @@
 //global friend: can access private and protected members of other class in which it is declared as a friend.
 #include<iostream>
 using namespace std;
-
+//
 
 class Product{
 private:

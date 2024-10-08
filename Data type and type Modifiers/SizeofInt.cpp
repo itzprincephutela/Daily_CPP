@@ -2,7 +2,7 @@
 using namespace std;
  int main ()
  {
-    int a;
+    int a;int b;
     a = 12;
     cout<< "Size of int "<<sizeof(a)<<endl;
     float b ;
